@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Pretty Patty — Catering Price List</title>
+<title>Pretty Patty — Price List &amp; Concept</title>
 <style>
   :root{
     --green:#009B3A;
@@ -20,7 +20,7 @@
     background:var(--cream);
     line-height:1.55;
   }
-  .wrap{max-width:1080px;margin:0 auto;padding:0 20px}
+  .wrap{max-width:1100px;margin:0 auto;padding:0 20px}
   h1,h2,h3{font-family:'Arial Black','Trebuchet MS',sans-serif;letter-spacing:-.5px;line-height:1.05}
 
   /* ===== HERO ===== */
@@ -29,27 +29,18 @@
     background:
       radial-gradient(circle at 80% 15%, rgba(254,209,0,.25), transparent 45%),
       linear-gradient(135deg,var(--green) 0%, var(--green-dark) 55%, var(--black) 100%);
-    color:#fff;
-    text-align:center;
-    padding:70px 20px 90px;
-    overflow:hidden;
+    color:#fff;text-align:center;padding:70px 20px 90px;overflow:hidden;
   }
   .flag-stripe{height:10px;display:flex}
   .flag-stripe span{flex:1}
   .s-green{background:var(--green)} .s-gold{background:var(--gold)} .s-black{background:var(--black)}
-  .badge{
-    display:inline-block;background:var(--gold);color:var(--black);
+  .badge{display:inline-block;background:var(--gold);color:var(--black);
     font-weight:bold;font-size:13px;letter-spacing:2px;text-transform:uppercase;
-    padding:7px 18px;border-radius:999px;margin-bottom:22px;
-  }
-  .logo{
-    font-size:clamp(46px,9vw,90px);
-    color:var(--gold);
-    text-shadow:4px 4px 0 var(--black), 8px 8px 0 rgba(0,0,0,.25);
-    margin-bottom:6px;
-  }
+    padding:7px 18px;border-radius:999px;margin-bottom:22px}
+  .logo{font-size:clamp(46px,9vw,90px);color:var(--gold);
+    text-shadow:4px 4px 0 var(--black), 8px 8px 0 rgba(0,0,0,.25);margin-bottom:6px}
   .logo .pretty{color:#fff}
-  .tagline{font-size:clamp(16px,2.4vw,22px);font-weight:bold;max-width:620px;margin:14px auto 0;opacity:.95}
+  .tagline{font-size:clamp(16px,2.4vw,22px);font-weight:bold;max-width:640px;margin:14px auto 0;opacity:.95}
   .hero-patty{position:absolute;opacity:.9}
   .hp1{top:30px;left:6%;width:90px;transform:rotate(-18deg)}
   .hp2{bottom:24px;right:7%;width:120px;transform:rotate(14deg)}
@@ -58,80 +49,97 @@
   section{padding:56px 0}
   .kicker{color:var(--green);font-weight:bold;text-transform:uppercase;letter-spacing:2px;font-size:13px;text-align:center}
   .sec-title{font-size:clamp(28px,5vw,42px);text-align:center;margin:6px 0 8px}
-  .sec-sub{text-align:center;max-width:640px;margin:0 auto 36px;color:#444;font-size:17px}
+  .sec-sub{text-align:center;max-width:680px;margin:0 auto 36px;color:#444;font-size:17px}
   .alt{background:#fff}
 
   /* ===== MENU CARDS ===== */
   .grid{display:grid;gap:22px}
-  .menu-grid{grid-template-columns:repeat(auto-fit,minmax(230px,1fr))}
-  .card{
-    background:#fff;border:3px solid var(--black);border-radius:18px;
-    overflow:hidden;box-shadow:6px 6px 0 rgba(0,0,0,.12);
-    transition:transform .15s;
-  }
+  .menu-grid{grid-template-columns:repeat(auto-fit,minmax(210px,1fr))}
+  .card{background:#fff;border:3px solid var(--black);border-radius:18px;
+    overflow:hidden;box-shadow:6px 6px 0 rgba(0,0,0,.12);transition:transform .15s}
   .card:hover{transform:translateY(-4px)}
-  .card-art{height:150px;display:flex;align-items:center;justify-content:center}
-  .card-body{padding:18px 20px 22px}
-  .card h3{font-size:21px;margin-bottom:6px}
-  .card p{font-size:14.5px;color:#555;min-height:42px}
+  .card-art{height:130px;display:flex;align-items:center;justify-content:center}
+  .card-body{padding:16px 18px 20px}
+  .card h3{font-size:19px;margin-bottom:6px}
+  .card p{font-size:14px;color:#555;min-height:44px}
   .tag{display:inline-block;font-size:11px;font-weight:bold;text-transform:uppercase;letter-spacing:1px;
        padding:4px 10px;border-radius:999px;margin-top:10px}
   .tag-veg{background:#E4F6E8;color:var(--green-dark)}
   .tag-meat{background:#FDE7E9;color:var(--red)}
-  .tag-spice{background:#FFF1CC;color:#9a7a00}
+  .tag-fish{background:#E3F0FA;color:#1B6CA8}
+  .tag-soon{background:#EEE;color:#888}
   .price-pill{float:right;background:var(--gold);color:var(--black);font-weight:bold;
-       padding:4px 12px;border-radius:999px;font-size:15px}
+       padding:4px 11px;border-radius:999px;font-size:14px}
+  .card.soon{opacity:.65;border-style:dashed}
 
   /* ===== TIER TABLE ===== */
   .table-wrap{overflow-x:auto;border-radius:16px;border:3px solid var(--black);box-shadow:6px 6px 0 rgba(0,0,0,.12)}
-  table{width:100%;border-collapse:collapse;background:#fff;min-width:520px}
-  th,td{padding:16px 18px;text-align:center;font-size:16px}
-  thead th{background:var(--black);color:var(--gold);font-size:15px;text-transform:uppercase;letter-spacing:1px}
+  table{width:100%;border-collapse:collapse;background:#fff;min-width:560px}
+  th,td{padding:15px 18px;text-align:center;font-size:16px}
+  thead th{background:var(--black);color:var(--gold);font-size:14px;text-transform:uppercase;letter-spacing:1px}
   thead th:first-child{text-align:left}
   tbody td:first-child{text-align:left;font-weight:bold}
   tbody tr:nth-child(even){background:#FFFBF0}
-  .best{background:var(--green)!important;color:#fff;position:relative}
+  .best{background:var(--green)!important;color:#fff}
   .best small{display:block;font-weight:normal;font-size:11px;opacity:.9}
-  .row-veg td:first-child::before{content:"🌱 ";}
-  .row-beef td:first-child::before{content:"🥩 ";}
   .note{text-align:center;color:#666;font-size:14px;margin-top:16px}
 
+  /* two-track boxes */
+  .track-grid{grid-template-columns:repeat(auto-fit,minmax(300px,1fr));margin-bottom:34px}
+  .track{border-radius:18px;border:3px solid var(--black);box-shadow:6px 6px 0 rgba(0,0,0,.12);overflow:hidden;background:#fff}
+  .track-head{padding:18px 22px;color:#fff}
+  .th-green{background:var(--green)} .th-black{background:var(--black)}
+  .track-head h3{font-size:22px}
+  .track-head span{font-size:13px;opacity:.9;text-transform:uppercase;letter-spacing:1px}
+  .track-body{padding:20px 22px}
+  .track-body .minmax{font-family:'Arial Black',sans-serif;font-size:28px;margin-bottom:6px}
+  .track-body p{font-size:14.5px;color:#555}
+
   /* ===== PACKAGES ===== */
-  .pack-grid{grid-template-columns:repeat(auto-fit,minmax(260px,1fr))}
-  .pack{
-    background:#fff;border-radius:18px;border:3px solid var(--black);
-    box-shadow:6px 6px 0 rgba(0,0,0,.12);display:flex;flex-direction:column;
-  }
-  .pack-head{padding:22px 22px 16px;color:#fff;border-radius:14px 14px 0 0}
-  .ph-green{background:var(--green)} .ph-gold{background:var(--gold);color:var(--black)!important} .ph-black{background:var(--black)}
-  .pack-head h3{font-size:24px}
-  .pack-head .from{font-size:13px;opacity:.9;text-transform:uppercase;letter-spacing:1px}
-  .pack-price{font-size:34px;font-family:'Arial Black',sans-serif;margin-top:4px}
-  .pack ul{list-style:none;padding:20px 22px;flex:1}
-  .pack li{padding:7px 0 7px 28px;position:relative;font-size:15px;border-bottom:1px dashed #eee}
-  .pack li::before{content:"🟢";position:absolute;left:0;font-size:13px}
-  .pack .feeds{margin:0 22px 22px;background:var(--cream);border-radius:10px;padding:10px;text-align:center;font-weight:bold;font-size:14px}
-  .popular{position:relative}
-  .popular::before{content:"⭐ MOST POPULAR";position:absolute;top:-14px;left:50%;transform:translateX(-50%);
-    background:var(--red);color:#fff;font-size:12px;font-weight:bold;padding:5px 14px;border-radius:999px;white-space:nowrap;z-index:2}
+  .pack-grid{grid-template-columns:repeat(auto-fit,minmax(250px,1fr))}
+  .pack{background:#fff;border-radius:18px;border:3px solid var(--black);
+    box-shadow:6px 6px 0 rgba(0,0,0,.12);display:flex;flex-direction:column}
+  .pack-head{padding:20px 22px 14px;color:#fff;border-radius:14px 14px 0 0}
+  .ph-green{background:var(--green)}
+  .ph-gold{background:var(--gold);color:var(--black)!important}
+  .ph-black{background:var(--black)}
+  .ph-red{background:var(--red)}
+  .ph-blue{background:#1B6CA8}
+  .pack-head h3{font-size:22px}
+  .pack-head .from{font-size:12px;opacity:.9;text-transform:uppercase;letter-spacing:1px}
+  .pack-price{font-size:30px;font-family:'Arial Black',sans-serif;margin-top:4px}
+  .pack-price small{font-size:12px;font-family:inherit;font-weight:normal;opacity:.85}
+  .pack ul{list-style:none;padding:16px 20px;flex:1}
+  .pack li{padding:6px 0 6px 26px;position:relative;font-size:14.5px;border-bottom:1px dashed #eee}
+  .pack li::before{content:"🟢";position:absolute;left:0;font-size:12px}
+  .pack .feeds{margin:0 20px 20px;background:var(--cream);border-radius:10px;padding:9px;text-align:center;font-weight:bold;font-size:13.5px}
+  .tbd{display:inline-block;background:rgba(255,255,255,.25);font-size:10px;padding:2px 8px;border-radius:999px;
+    text-transform:uppercase;letter-spacing:1px;vertical-align:middle;margin-left:6px;font-family:'Trebuchet MS',sans-serif}
+  .ph-gold .tbd{background:rgba(0,0,0,.15)}
+
+  /* ===== PACKAGING / STORAGE ===== */
+  .storage-grid{grid-template-columns:repeat(auto-fit,minmax(200px,1fr))}
+  .storage{background:#fff;border:2px dashed var(--green);border-radius:14px;padding:20px;text-align:center}
+  .storage .emoji{font-size:34px}
+  .storage h4{font-size:16px;margin:8px 0 4px}
+  .storage p{font-size:13.5px;color:#666}
 
   /* ===== ADD-ONS ===== */
   .addon-grid{grid-template-columns:repeat(auto-fit,minmax(180px,1fr))}
-  .addon{background:#fff;border:2px dashed var(--green);border-radius:14px;padding:18px;text-align:center}
+  .addon{background:#fff;border:2px dashed #bbb;border-radius:14px;padding:18px;text-align:center;opacity:.8}
   .addon .emoji{font-size:34px}
   .addon h4{font-size:16px;margin:8px 0 2px}
-  .addon .ap{color:var(--green-dark);font-weight:bold;font-size:18px}
-  .addon small{color:#888;font-size:12px}
+  .addon .ap{color:#999;font-weight:bold;font-size:13px;text-transform:uppercase;letter-spacing:1px}
 
   /* ===== PROCESS ===== */
-  .steps{grid-template-columns:repeat(auto-fit,minmax(200px,1fr))}
+  .steps{grid-template-columns:repeat(auto-fit,minmax(190px,1fr))}
   .step{text-align:center;padding:10px}
   .step .num{width:54px;height:54px;border-radius:50%;background:var(--gold);color:var(--black);
     font-family:'Arial Black',sans-serif;font-size:24px;display:flex;align-items:center;justify-content:center;margin:0 auto 14px;border:3px solid var(--black)}
   .step h4{font-size:18px;margin-bottom:6px}
   .step p{font-size:14.5px;color:#555}
   .info-bar{background:var(--black);color:#fff;border-radius:18px;padding:30px;margin-top:36px;
-    display:grid;gap:20px;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));text-align:center}
+    display:grid;gap:20px;grid-template-columns:repeat(auto-fit,minmax(190px,1fr));text-align:center}
   .info-bar .ib-label{color:var(--gold);font-weight:bold;text-transform:uppercase;letter-spacing:1px;font-size:12px;margin-bottom:4px}
   .info-bar .ib-val{font-size:16px}
 
@@ -139,57 +147,77 @@
   .social-section{background:linear-gradient(135deg,#101010,#1c3a23);color:#fff}
   .social-section .sec-title{color:#fff}
   .social-section .sec-sub{color:#cfd8cf}
-  .social-grid{grid-template-columns:repeat(auto-fit,minmax(240px,1fr));align-items:start}
-  .mock-label{text-align:center;font-weight:bold;color:var(--gold);text-transform:uppercase;letter-spacing:1px;font-size:13px;margin-bottom:12px}
+  .split-bar{display:flex;border-radius:999px;overflow:hidden;max-width:640px;margin:0 auto 40px;border:2px solid rgba(255,255,255,.25);font-size:13px;font-weight:bold}
+  .split-bar div{padding:10px 6px;text-align:center;white-space:nowrap}
+  .sb-tiktok{background:var(--red);flex:60}
+  .sb-insta{background:var(--gold);color:#111;flex:20}
+  .sb-other{background:#555;flex:20}
+  .social-grid{grid-template-columns:repeat(auto-fit,minmax(230px,1fr));align-items:start}
+  .mock-label{text-align:center;font-weight:bold;color:var(--gold);text-transform:uppercase;letter-spacing:1px;font-size:12px;margin-bottom:4px}
+  .mock-role{text-align:center;color:#a9b8ac;font-size:12px;margin-bottom:12px}
 
-  /* Instagram post mock */
-  .ig-post{background:#fff;color:#111;border-radius:14px;overflow:hidden;max-width:300px;margin:0 auto;box-shadow:0 10px 30px rgba(0,0,0,.4)}
+  .ig-post{background:#fff;color:#111;border-radius:14px;overflow:hidden;max-width:290px;margin:0 auto;box-shadow:0 10px 30px rgba(0,0,0,.4)}
   .ig-top{display:flex;align-items:center;gap:8px;padding:10px}
   .ig-av{width:32px;height:32px;border-radius:50%;background:var(--green);color:var(--gold);display:flex;align-items:center;justify-content:center;font-weight:bold;font-size:13px}
   .ig-user{font-weight:bold;font-size:13px}
   .ig-loc{font-size:11px;color:#777}
   .ig-img{aspect-ratio:1;display:flex;align-items:center;justify-content:center;position:relative;
     background:radial-gradient(circle at 70% 25%,var(--gold),var(--green) 70%)}
-  .ig-cap-on{position:absolute;bottom:14px;left:14px;right:14px;color:#fff;font-family:'Arial Black',sans-serif;font-size:22px;text-shadow:2px 2px 0 rgba(0,0,0,.5);line-height:1.05}
-  .ig-actions{padding:8px 12px;font-size:18px;display:flex;gap:12px}
-  .ig-cap{padding:0 12px 14px;font-size:13px}
-  .ig-cap b{font-weight:bold}
+  .ig-cap-on{position:absolute;bottom:14px;left:14px;right:14px;color:#fff;font-family:'Arial Black',sans-serif;font-size:19px;text-shadow:2px 2px 0 rgba(0,0,0,.5);line-height:1.05}
+  .ig-actions{padding:8px 12px;font-size:17px;display:flex;gap:12px}
+  .ig-cap{padding:0 12px 14px;font-size:12.5px}
 
-  /* Story / TikTok vertical mock */
-  .vertical{aspect-ratio:9/16;max-width:200px;margin:0 auto;border-radius:18px;overflow:hidden;position:relative;
+  .vertical{aspect-ratio:9/16;max-width:195px;margin:0 auto;border-radius:18px;overflow:hidden;position:relative;
     box-shadow:0 10px 30px rgba(0,0,0,.4);display:flex;flex-direction:column;justify-content:space-between;padding:16px;color:#fff}
+  .tiktok-bg{background:linear-gradient(160deg,#101010,var(--red) 130%)}
   .story-bg{background:linear-gradient(160deg,var(--green),var(--black))}
-  .tiktok-bg{background:linear-gradient(160deg,#101010,var(--red) 120%)}
+  .other-bg{background:linear-gradient(160deg,#2b2b2b,#5a5a5a)}
   .v-top{font-size:11px;font-weight:bold;text-transform:uppercase;letter-spacing:1px;opacity:.85}
   .v-mid{text-align:center}
-  .v-mid .big{font-family:'Arial Black',sans-serif;font-size:26px;line-height:1.05;text-shadow:2px 2px 0 rgba(0,0,0,.4)}
-  .v-mid .sub{font-size:12px;margin-top:8px;background:var(--gold);color:#111;display:inline-block;padding:4px 10px;border-radius:999px;font-weight:bold}
-  .v-bottom{font-size:12px;text-align:center;font-weight:bold}
-  .v-emoji{font-size:40px;text-align:center}
-  .tiktok-ui{position:absolute;right:8px;bottom:60px;display:flex;flex-direction:column;gap:14px;font-size:20px;text-align:center}
-  .caption-ideas{background:rgba(255,255,255,.06);border:1px solid rgba(254,209,0,.4);border-radius:14px;padding:20px 22px;margin-top:30px}
-  .caption-ideas h3{color:var(--gold);font-size:20px;margin-bottom:14px}
-  .caption-ideas ul{list-style:none;display:grid;gap:12px}
-  .caption-ideas li{padding-left:26px;position:relative;font-size:15px}
+  .v-mid .big{font-family:'Arial Black',sans-serif;font-size:23px;line-height:1.05;text-shadow:2px 2px 0 rgba(0,0,0,.4)}
+  .v-mid .sub{font-size:11.5px;margin-top:8px;background:var(--gold);color:#111;display:inline-block;padding:4px 10px;border-radius:999px;font-weight:bold}
+  .v-bottom{font-size:11.5px;text-align:center;font-weight:bold}
+  .v-emoji{font-size:36px;text-align:center}
+  .tiktok-ui{position:absolute;right:8px;bottom:56px;display:flex;flex-direction:column;gap:12px;font-size:18px;text-align:center}
+  .caption-ideas{background:rgba(255,255,255,.06);border:1px solid rgba(254,209,0,.4);border-radius:14px;padding:22px;margin-top:30px}
+  .caption-ideas h3{color:var(--gold);font-size:19px;margin-bottom:14px}
+  .caption-ideas ul{list-style:none;display:grid;gap:11px}
+  .caption-ideas li{padding-left:26px;position:relative;font-size:14.5px}
   .caption-ideas li::before{content:"📲";position:absolute;left:0}
-  .hashtags{margin-top:18px;font-size:14px;color:var(--gold);word-spacing:4px}
+  .hashtags{margin-top:18px;font-size:13.5px;color:var(--gold);word-spacing:4px}
 
   /* ===== CTA / FOOTER ===== */
   .cta{background:var(--gold);text-align:center;padding:56px 20px}
   .cta h2{font-size:clamp(26px,5vw,40px);margin-bottom:10px}
-  .cta p{font-size:18px;max-width:560px;margin:0 auto 24px;font-weight:bold}
+  .cta p{font-size:18px;max-width:580px;margin:0 auto 24px;font-weight:bold}
   .cta a{display:inline-block;background:var(--black);color:var(--gold);text-decoration:none;
-    font-weight:bold;font-size:18px;padding:16px 34px;border-radius:999px;border:3px solid var(--black);
-    transition:.15s}
+    font-weight:bold;font-size:18px;padding:16px 34px;border-radius:999px;border:3px solid var(--black);transition:.15s}
   .cta a:hover{background:var(--green);color:#fff;border-color:var(--green)}
   footer{background:var(--black);color:#bbb;text-align:center;padding:26px;font-size:13px}
   footer .logo-sm{color:var(--gold);font-family:'Arial Black',sans-serif;font-size:20px;margin-bottom:6px}
-  .editnote{background:#FFF1CC;border-left:5px solid var(--gold);padding:14px 18px;border-radius:8px;
-    font-size:13.5px;color:#7a5e00;max-width:1080px;margin:24px auto 0}
-  @media print{.editnote{display:none}}
+
+  /* ===== INTERNAL ===== */
+  .internal{background:repeating-linear-gradient(45deg,#f4f4f4,#f4f4f4 12px,#ececec 12px,#ececec 24px);
+    border-top:6px dashed var(--red)}
+  .internal-flag{background:var(--red);color:#fff;text-align:center;font-weight:bold;
+    text-transform:uppercase;letter-spacing:2px;font-size:13px;padding:10px}
+  .int-grid{grid-template-columns:repeat(auto-fit,minmax(260px,1fr))}
+  .int-card{background:#fff;border:2px solid #ccc;border-radius:14px;padding:20px}
+  .int-card h4{font-size:17px;margin-bottom:10px;color:var(--black)}
+  .int-card ul{list-style:none}
+  .int-card li{padding:5px 0 5px 24px;position:relative;font-size:14.5px;color:#444}
+  .int-card li::before{content:"▸";position:absolute;left:4px;color:var(--green);font-weight:bold}
+  .int-card li.no::before{content:"❌";left:0;font-size:11px}
+  .int-card li.yes::before{content:"✅";left:0;font-size:11px}
+  .creed{background:var(--black);color:var(--gold);border-radius:14px;padding:24px;text-align:center;
+    font-family:'Arial Black',sans-serif;font-size:clamp(18px,3vw,26px);margin-top:24px;line-height:1.25}
+  .creed small{display:block;font-family:'Trebuchet MS',sans-serif;font-weight:normal;color:#999;font-size:13px;margin-top:8px;letter-spacing:1px}
+  .editnote{background:#FFF1CC;border-left:5px solid var(--gold);padding:16px 18px;border-radius:8px;
+    font-size:13.5px;color:#7a5e00;max-width:1100px;margin:26px auto;line-height:1.6}
+  @media print{.editnote,.internal,.internal-flag{display:none}}
 
   /* ===== RESPONSIVE / MOBILE ===== */
-  /* Prevent the page from ever overflowing sideways on phones */
+  /* Never let the page scroll sideways on phones */
   html{-webkit-text-size-adjust:100%}
   body{overflow-x:hidden}
   img,svg{max-width:100%}
@@ -197,39 +225,44 @@
   @media (max-width:680px){
     .wrap{padding:0 16px}
     section{padding:42px 0}
-    .hero{padding:54px 16px 64px}
-    /* The decorative patties sit on top of the text on small screens — shrink, fade
-       and push them to the corners so they decorate without overlapping. */
-    .hero-patty{opacity:.35}
-    .hp1{width:56px;top:14px;left:2%}
-    .hp2{width:64px;bottom:12px;right:2%}
-    .tagline{font-size:16px}
-    .sec-sub{font-size:15.5px;margin-bottom:28px}
+    .hero{padding:52px 16px 60px}
+    /* Decorative patties overlap the hero text on small screens — shrink,
+       fade and tuck them into the corners so they decorate without colliding. */
+    .hero-patty{opacity:.3}
+    .hp1{width:52px;top:12px;left:2%}
+    .hp2{width:60px;bottom:10px;right:2%}
+    .tagline{font-size:15.5px}
+    .sec-sub{font-size:15px;margin-bottom:28px}
 
-    /* Cards / packages stack to a single column for comfortable reading */
-    .menu-grid,.pack-grid,.addon-grid,.steps,.social-grid{grid-template-columns:1fr}
-    .grid{gap:20px}
+    /* Stack every card grid into a single readable column */
+    .menu-grid,.track-grid,.pack-grid,.storage-grid,.addon-grid,
+    .steps,.social-grid,.int-grid{grid-template-columns:1fr}
+    .grid{gap:18px}
+    .addon-grid{max-width:100%!important}
 
-    /* The "MOST POPULAR" badge floats above its card — give it room so it
-       never overlaps the card stacked above it. */
-    .pack.popular{margin-top:20px}
-
-    /* Long flavour names + price pill can collide on narrow cards */
-    .card h3{font-size:19px}
+    /* Long flavour name + price pill can collide on a narrow card */
     .price-pill{float:none;display:inline-block;margin-top:6px}
+
+    /* The channel-split bar has nowrap labels that overflow on phones —
+       stack the three segments vertically instead. */
+    .split-bar{flex-direction:column;border-radius:16px;margin-bottom:30px}
+    .split-bar div{padding:11px 8px;white-space:normal;flex:1 1 auto!important}
 
     .info-bar{padding:22px 18px;gap:16px}
     .table-wrap{margin:0}
     th,td{padding:13px 12px;font-size:15px}
+    thead th{font-size:12.5px}
 
-    .ig-post{max-width:100%}
-    .editnote{margin:24px 16px 0}
+    .ig-post,.vertical{max-width:100%}
+    .vertical{max-width:230px}
+    .creed{padding:20px 16px}
+    .editnote{margin:26px 16px}
   }
 
   @media (max-width:380px){
     .logo{text-shadow:3px 3px 0 var(--black)}
-    .pack-price{font-size:30px}
     .hero-patty{display:none}
+    .pack-price{font-size:26px}
   }
 </style>
 </head>
@@ -239,189 +272,309 @@
 
 <!-- HERO -->
 <header class="hero">
-  <!-- decorative patties -->
   <svg class="hero-patty hp1" viewBox="0 0 100 70"><path d="M50 5C20 5 5 35 8 55c1 8 12 10 42 10s41-2 42-10C95 35 80 5 50 5z" fill="#FED100" stroke="#101010" stroke-width="3"/><path d="M22 30q28-14 56 0" fill="none" stroke="#C99700" stroke-width="3" stroke-linecap="round"/></svg>
   <svg class="hero-patty hp2" viewBox="0 0 100 70"><path d="M50 5C20 5 5 35 8 55c1 8 12 10 42 10s41-2 42-10C95 35 80 5 50 5z" fill="#FED100" stroke="#101010" stroke-width="3"/><path d="M22 30q28-14 56 0" fill="none" stroke="#C99700" stroke-width="3" stroke-linecap="round"/></svg>
 
   <div class="wrap">
-    <span class="badge">Jamaican Patty Catering</span>
+    <span class="badge">Authentic Jamaican Patties · Order Online</span>
     <h1 class="logo"><span class="pretty">Pretty</span> Patty</h1>
-    <p class="tagline">Authentic Jamaican patties for your party, event or get-together — freshly baked, full of flavour, made with island love. 🇯🇲</p>
+    <p class="tagline">Freshly baked Jamaican patties, boxed and ready for your home, your shop or your congregation. Five flavours. One kitchen. Real love. 🇯🇲</p>
   </div>
 </header>
 <div class="flag-stripe"><span class="s-black"></span><span class="s-gold"></span><span class="s-green"></span></div>
 
-<!-- MENU -->
+<!-- FLAVOURS -->
 <section>
   <div class="wrap">
-    <p class="kicker">Our flavours</p>
+    <p class="kicker">Our five flavours</p>
     <h2 class="sec-title">Pick your filling</h2>
-    <p class="sec-sub">Every patty is freshly baked in our golden, spiced pastry crust. Mix &amp; match as you like — perfect for any crowd.</p>
+    <p class="sec-sub">Every patty is baked fresh in our golden, spiced pastry crust. Mix &amp; match in any box.</p>
 
     <div class="grid menu-grid">
       <div class="card">
-        <div class="card-art" style="background:radial-gradient(circle at 60% 35%,#FFE680,#E4F6E8)">
-          <svg width="120" height="84" viewBox="0 0 100 70"><path d="M50 5C20 5 5 35 8 55c1 8 12 10 42 10s41-2 42-10C95 35 80 5 50 5z" fill="#FED100" stroke="#101010" stroke-width="3"/><path d="M22 30q28-14 56 0" fill="none" stroke="#43A047" stroke-width="4" stroke-linecap="round"/></svg>
+        <div class="card-art" style="background:radial-gradient(circle at 60% 35%,#FFD27A,#FDE7E9)">
+          <svg width="106" height="74" viewBox="0 0 100 70"><path d="M50 5C20 5 5 35 8 55c1 8 12 10 42 10s41-2 42-10C95 35 80 5 50 5z" fill="#FED100" stroke="#101010" stroke-width="3"/><path d="M22 30q28-14 56 0" fill="none" stroke="#E63946" stroke-width="4" stroke-linecap="round"/></svg>
         </div>
         <div class="card-body">
-          <h3>Veggie / Vegan <span class="price-pill">€2.50</span></h3>
-          <p>Spiced vegetable and herb filling with Caribbean seasoning. 100% plant-based.</p>
+          <h3>Beef <span class="price-pill">€5.00</span></h3>
+          <p>Seasoned minced beef with carrots. The original, the classic, the one everyone comes back for.</p>
+          <span class="tag tag-meat">🥩 Beef &amp; carrot</span>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card-art" style="background:radial-gradient(circle at 60% 35%,#FFE07A,#FFF1CC)">
+          <svg width="106" height="74" viewBox="0 0 100 70"><path d="M50 5C20 5 5 35 8 55c1 8 12 10 42 10s41-2 42-10C95 35 80 5 50 5z" fill="#FED100" stroke="#101010" stroke-width="3"/><path d="M22 30q28-14 56 0" fill="none" stroke="#E8A33D" stroke-width="4" stroke-linecap="round"/></svg>
+        </div>
+        <div class="card-body">
+          <h3>Cheese <span class="price-pill">€5.00</span></h3>
+          <p>Melting cheese folded through our seasoned beef. Rich, gooey and seriously moreish.</p>
+          <span class="tag tag-meat">🧀 Cheese &amp; beef</span>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card-art" style="background:radial-gradient(circle at 60% 35%,#FFE680,#E4F6E8)">
+          <svg width="106" height="74" viewBox="0 0 100 70"><path d="M50 5C20 5 5 35 8 55c1 8 12 10 42 10s41-2 42-10C95 35 80 5 50 5z" fill="#FED100" stroke="#101010" stroke-width="3"/><path d="M22 30q28-14 56 0" fill="none" stroke="#43A047" stroke-width="4" stroke-linecap="round"/></svg>
+        </div>
+        <div class="card-body">
+          <h3>Veg <span class="price-pill">€2.50</span></h3>
+          <p>Chickpeas &amp; sweet potato slow-cooked in coconut milk. Fully plant-based, fully satisfying.</p>
           <span class="tag tag-veg">🌱 Vegan</span>
         </div>
       </div>
 
       <div class="card">
-        <div class="card-art" style="background:radial-gradient(circle at 60% 35%,#FFD27A,#FDE7E9)">
-          <svg width="120" height="84" viewBox="0 0 100 70"><path d="M50 5C20 5 5 35 8 55c1 8 12 10 42 10s41-2 42-10C95 35 80 5 50 5z" fill="#FED100" stroke="#101010" stroke-width="3"/><path d="M22 30q28-14 56 0" fill="none" stroke="#E63946" stroke-width="4" stroke-linecap="round"/></svg>
+        <div class="card-art" style="background:radial-gradient(circle at 60% 35%,#FFE0A3,#FFF6E0)">
+          <svg width="106" height="74" viewBox="0 0 100 70"><path d="M50 5C20 5 5 35 8 55c1 8 12 10 42 10s41-2 42-10C95 35 80 5 50 5z" fill="#FED100" stroke="#101010" stroke-width="3"/><path d="M22 30q28-14 56 0" fill="none" stroke="#C99700" stroke-width="4" stroke-linecap="round"/></svg>
         </div>
         <div class="card-body">
-          <h3>Beef <span class="price-pill">€5.00</span></h3>
-          <p>Classic seasoned minced beef with Scotch bonnet, onion &amp; fresh thyme. The real deal.</p>
-          <span class="tag tag-meat">🥩 Beef</span>
+          <h3>Chicken <span class="price-pill">€5.00</span></h3>
+          <p>Curried chicken with potato. Warm, fragrant island spice in every bite.</p>
+          <span class="tag tag-meat">🍗 Curry chicken</span>
         </div>
       </div>
 
       <div class="card">
-        <div class="card-art" style="background:radial-gradient(circle at 60% 35%,#FFE0A3,#FFF1CC)">
-          <svg width="120" height="84" viewBox="0 0 100 70"><path d="M50 5C20 5 5 35 8 55c1 8 12 10 42 10s41-2 42-10C95 35 80 5 50 5z" fill="#FED100" stroke="#101010" stroke-width="3"/><path d="M22 30q28-14 56 0" fill="none" stroke="#C99700" stroke-width="4" stroke-linecap="round"/></svg>
+        <div class="card-art" style="background:radial-gradient(circle at 60% 35%,#FFE9A8,#E3F0FA)">
+          <svg width="106" height="74" viewBox="0 0 100 70"><path d="M50 5C20 5 5 35 8 55c1 8 12 10 42 10s41-2 42-10C95 35 80 5 50 5z" fill="#FED100" stroke="#101010" stroke-width="3"/><path d="M22 30q28-14 56 0" fill="none" stroke="#1B6CA8" stroke-width="4" stroke-linecap="round"/></svg>
         </div>
         <div class="card-body">
-          <h3>Jerk Chicken <span class="price-pill" style="background:#eee;color:#999">option</span></h3>
-          <p>Suggested add-on flavour: marinated jerk chicken. Ask us about the possibilities.</p>
-          <span class="tag tag-spice">🌶️ Spicy</span>
+          <h3>Fish <span class="price-pill">€5.00</span></h3>
+          <p>Traditional Jamaican salt fish. Deeply savoury and true to the island recipe.</p>
+          <span class="tag tag-fish">🐟 Salt fish</span>
+        </div>
+      </div>
+
+      <div class="card soon">
+        <div class="card-art" style="background:radial-gradient(circle at 60% 35%,#eee,#f7f7f7)">
+          <svg width="106" height="74" viewBox="0 0 100 70"><path d="M50 5C20 5 5 35 8 55c1 8 12 10 42 10s41-2 42-10C95 35 80 5 50 5z" fill="#EDE3C0" stroke="#999" stroke-width="3" stroke-dasharray="5 4"/><path d="M22 30q28-14 56 0" fill="none" stroke="#bbb" stroke-width="4" stroke-linecap="round"/></svg>
+        </div>
+        <div class="card-body">
+          <h3>Lamb <span class="price-pill" style="background:#eee;color:#999">soon</span></h3>
+          <p>Coming to the menu in the future. Watch this space.</p>
+          <span class="tag tag-soon">⏳ In development</span>
         </div>
       </div>
     </div>
   </div>
 </section>
 
-<!-- TIERS -->
+<!-- ORDER VOLUMES -->
 <section class="alt">
   <div class="wrap">
-    <p class="kicker">The more you order, the better the price</p>
-    <h2 class="sec-title">Volume pricing</h2>
-    <p class="sec-sub">Minimum order of <b>25 pieces</b>. Order more and the price per patty drops automatically. Mixing flavours counts toward your total.</p>
+    <p class="kicker">How we sell</p>
+    <h2 class="sec-title">By the box</h2>
+    <p class="sec-sub">Pretty Patty sells in boxes — not loose patties. Two clear routes: one for households, one for businesses.</p>
+
+    <div class="grid track-grid">
+      <div class="track">
+        <div class="track-head th-green">
+          <span>For households</span>
+          <h3>B2C — Retail</h3>
+        </div>
+        <div class="track-body">
+          <div class="minmax">Box of 20</div>
+          <p>Minimum order for private customers is one box of 20 patties. Mix your flavours freely. <b>Except on promo days</b>, when smaller quantities may be offered.</p>
+        </div>
+      </div>
+
+      <div class="track">
+        <div class="track-head th-black">
+          <span>For shops, churches &amp; caterers</span>
+          <h3>B2B — Wholesale</h3>
+        </div>
+        <div class="track-body">
+          <div class="minmax">Box of 100</div>
+          <p>Minimum order for business customers is 100 patties. Recurring monthly and bi-weekly supply available at wholesale rates.</p>
+        </div>
+      </div>
+    </div>
 
     <div class="table-wrap">
       <table>
         <thead>
           <tr>
             <th>Flavour</th>
-            <th>25 – 49 pcs</th>
-            <th>50 – 99 pcs</th>
-            <th class="best">100+ pcs<small>best price</small></th>
+            <th>B2C · box of 20<small style="display:block;font-weight:normal;font-size:11px;opacity:.8">per patty</small></th>
+            <th class="best">B2B · 100+<small>per patty · wholesale</small></th>
           </tr>
         </thead>
         <tbody>
-          <tr class="row-veg">
-            <td>Veggie / Vegan</td>
-            <td>€2.50</td>
-            <td>€2.25</td>
-            <td class="best">€2.00</td>
-          </tr>
-          <tr class="row-beef">
-            <td>Beef</td>
-            <td>€5.00</td>
-            <td>€4.50</td>
-            <td class="best">€4.00</td>
-          </tr>
+          <tr><td>🥩 Beef</td><td>€5.00</td><td class="best">€4.00</td></tr>
+          <tr><td>🧀 Cheese (cheese &amp; beef)</td><td>€5.00</td><td class="best">€4.00</td></tr>
+          <tr><td>🍗 Chicken</td><td>€5.00</td><td class="best">€4.00</td></tr>
+          <tr><td>🐟 Fish (salt fish)</td><td>€5.00</td><td class="best">€4.00</td></tr>
+          <tr><td>🌱 Veg (vegan)</td><td>€2.50</td><td class="best">€2.00</td></tr>
         </tbody>
       </table>
     </div>
-    <p class="note">Prices per piece, incl. VAT · Volume discount applies to the total number of patties per order · Delivery fees on request</p>
+    <p class="note">Prices per piece, incl. VAT · B2C minimum 20 pcs, B2B minimum 100 pcs · Delivery on request</p>
   </div>
 </section>
 
 <!-- PACKAGES -->
 <section>
   <div class="wrap">
-    <p class="kicker">Ready to go</p>
-    <h2 class="sec-title">Catering packages</h2>
-    <p class="sec-sub">Don't feel like figuring it out? Pick a complete package. All packages are customisable — more patties, a different mix or extra add-ons, anytime.</p>
+    <p class="kicker">Choose your box</p>
+    <h2 class="sec-title">The Pretty Patty boxes</h2>
+    <p class="sec-sub">Every box holds 20 patties (B2C). Business orders start at 100 — same boxes, wholesale pricing.</p>
 
     <div class="grid pack-grid">
+
       <div class="pack">
-        <div class="pack-head ph-green">
-          <span class="from">From</span>
-          <h3>Small Yard</h3>
-          <div class="pack-price">€67.50</div>
+        <div class="pack-head ph-gold">
+          <span class="from">20 patties</span>
+          <h3>Faithful Box</h3>
+          <div class="pack-price">€90 <small>· €4.50 avg / patty</small></div>
         </div>
         <ul>
-          <li>25 patties of your choice (mix possible)</li>
-          <li>2 house-made dipping sauces</li>
-          <li>Freshly baked &amp; delivered warm</li>
+          <li>A mix of all five flavours</li>
+          <li>4× beef · 4× cheese · 4× chicken</li>
+          <li>4× fish · 4× veg</li>
+          <li>The best way to meet the whole family</li>
         </ul>
-        <div class="feeds">👥 Ideal for ± 12 people</div>
+        <div class="feeds">⭐ Our signature box</div>
       </div>
 
-      <div class="pack popular">
-        <div class="pack-head ph-gold">
-          <span class="from">From</span>
-          <h3>Big Up Party</h3>
-          <div class="pack-price">€145</div>
+      <div class="pack">
+        <div class="pack-head ph-red">
+          <span class="from">20 patties</span>
+          <h3>Bull Box <span class="tbd">name tbd</span></h3>
+          <div class="pack-price">€100 <small>· €5.00 / patty</small></div>
         </div>
         <ul>
-          <li>50 patties of your choice (mix possible)</li>
-          <li>Coco bread with half of them</li>
-          <li>3 house-made dipping sauces</li>
-          <li>Warming box included</li>
+          <li>Beef only — for the purists</li>
+          <li>Includes the beef &amp; cheese patty</li>
+          <li>Choose your own beef/cheese split</li>
         </ul>
-        <div class="feeds">👥 Ideal for ± 25 people</div>
+        <div class="feeds">🥩 Beef lovers</div>
+      </div>
+
+      <div class="pack">
+        <div class="pack-head ph-green">
+          <span class="from">20 patties</span>
+          <h3>Yardbird Box <span class="tbd">name tbd</span></h3>
+          <div class="pack-price">€100 <small>· €5.00 / patty</small></div>
+        </div>
+        <ul>
+          <li>Chicken only</li>
+          <li>Curried chicken &amp; potato</li>
+          <li>Crowd-pleaser, mild island spice</li>
+        </ul>
+        <div class="feeds">🍗 Chicken only</div>
       </div>
 
       <div class="pack">
         <div class="pack-head ph-black">
-          <span class="from">From</span>
-          <h3>Carnival</h3>
-          <div class="pack-price">€275</div>
+          <span class="from">20 patties</span>
+          <h3>Mighty Box</h3>
+          <div class="pack-price">€100 <small>· €5.00 / patty</small></div>
         </div>
         <ul>
-          <li>100 patties of your choice (mix possible)</li>
-          <li>Coco bread + sauces, fully loaded</li>
-          <li>Jamaican drinks (Ting/Sorrel)</li>
-          <li>Warming set + tableware</li>
+          <li>All the meats — beef &amp; chicken</li>
+          <li>10× beef · 10× chicken</li>
+          <li>Built for the hungry</li>
         </ul>
-        <div class="feeds">👥 Ideal for ± 50 people</div>
+        <div class="feeds">💪 Full meat</div>
       </div>
+
+      <div class="pack">
+        <div class="pack-head ph-green">
+          <span class="from">20 patties</span>
+          <h3>Rasta Box</h3>
+          <div class="pack-price">€75 <small>· €3.75 avg / patty</small></div>
+        </div>
+        <ul>
+          <li>Fish &amp; veg — no red meat</li>
+          <li>10× salt fish · 10× veg</li>
+          <li>Lighter, cleaner, still full of soul</li>
+        </ul>
+        <div class="feeds">🌿 Fish &amp; veg</div>
+      </div>
+
+      <div class="pack">
+        <div class="pack-head ph-green">
+          <span class="from">20 patties</span>
+          <h3>Daniels Box</h3>
+          <div class="pack-price">€50 <small>· €2.50 / patty</small></div>
+        </div>
+        <ul>
+          <li>100% vegan</li>
+          <li>Chickpeas, sweet potato &amp; coconut milk</li>
+          <li>Plant-based from crust to filling</li>
+        </ul>
+        <div class="feeds">🌱 Veg only</div>
+      </div>
+
+      <div class="pack">
+        <div class="pack-head ph-blue">
+          <span class="from">20 patties</span>
+          <h3>Fisher Box</h3>
+          <div class="pack-price">€100 <small>· €5.00 / patty</small></div>
+        </div>
+        <ul>
+          <li>Salt fish only</li>
+          <li>The most traditional of them all</li>
+          <li>Deep, savoury island flavour</li>
+        </ul>
+        <div class="feeds">🐟 Fish only</div>
+      </div>
+
     </div>
   </div>
 </section>
 
-<!-- ADD-ONS -->
+<!-- PACKAGING & STORAGE -->
 <section class="alt">
   <div class="wrap">
-    <p class="kicker">Make it complete</p>
-    <h2 class="sec-title">Extras &amp; add-ons</h2>
-    <p class="sec-sub">Add to any package or standalone order.</p>
+    <p class="kicker">Built to keep</p>
+    <h2 class="sec-title">Packaging &amp; storage</h2>
+    <p class="sec-sub">Individually wrapped with a clean, supermarket-ready finish — so a shop can shelve it and a household can stock it.</p>
 
-    <div class="grid addon-grid">
-      <div class="addon"><div class="emoji">🍞</div><h4>Coco Bread</h4><div class="ap">€1.50</div><small>each</small></div>
-      <div class="addon"><div class="emoji">🌶️</div><h4>Dip / Chutney</h4><div class="ap">€0.75</div><small>per pot</small></div>
-      <div class="addon"><div class="emoji">🥤</div><h4>Jamaican Drink</h4><div class="ap">€2.50</div><small>Ting / Sorrel</small></div>
-      <div class="addon"><div class="emoji">🔥</div><h4>Warming Set</h4><div class="ap">€15</div><small>per event</small></div>
-      <div class="addon"><div class="emoji">🍽️</div><h4>Tableware &amp; cutlery</h4><div class="ap">€0.50</div><small>per person</small></div>
+    <div class="grid storage-grid">
+      <div class="storage"><div class="emoji">❄️</div><h4>Freezable</h4><p>Freeze on arrival and bake fresh whenever you're ready.</p></div>
+      <div class="storage"><div class="emoji">🧊</div><h4>Refrigerate 4 days</h4><p>Keeps for up to 4 days chilled. Use-by clearly printed.</p></div>
+      <div class="storage"><div class="emoji">🛒</div><h4>Retail-ready</h4><p>Supermarket-feel packaging — shelf-ready for our stockists.</p></div>
+      <div class="storage"><div class="emoji">🇯🇲</div><h4>Authentic recipe</h4><p>Traditional Jamaican recipe, made in one kitchen with care.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- ADD-ONS (FUTURE) -->
+<section>
+  <div class="wrap">
+    <p class="kicker">On the horizon</p>
+    <h2 class="sec-title">Coming soon</h2>
+    <p class="sec-sub">Not on the menu yet — but on the way.</p>
+
+    <div class="grid addon-grid" style="max-width:640px;margin:0 auto">
+      <div class="addon"><div class="emoji">🍞</div><h4>Coco Bread</h4><div class="ap">Coming soon</div></div>
+      <div class="addon"><div class="emoji">🍲</div><h4>Soups</h4><div class="ap">Coming soon</div></div>
+      <div class="addon"><div class="emoji">🐑</div><h4>Lamb Patty</h4><div class="ap">Coming soon</div></div>
     </div>
   </div>
 </section>
 
 <!-- PROCESS -->
-<section>
+<section class="alt">
   <div class="wrap">
-    <p class="kicker">How it works</p>
-    <h2 class="sec-title">Order in 4 steps</h2>
+    <p class="kicker">Online only · 4 clicks</p>
+    <h2 class="sec-title">How to order</h2>
+    <p class="sec-sub">No phone tag, no back-and-forth. One clean landing page, four clicks, done.</p>
 
     <div class="grid steps">
-      <div class="step"><div class="num">1</div><h4>Enquire</h4><p>Message or email us your date, quantity and flavour preference. From 25 pieces.</p></div>
-      <div class="step"><div class="num">2</div><h4>Quote</h4><p>You'll get a tailored quote with volume pricing within 24 hours.</p></div>
-      <div class="step"><div class="num">3</div><h4>Confirm</h4><p>Confirm at least 3 days before your event. Deposit on large orders.</p></div>
-      <div class="step"><div class="num">4</div><h4>Enjoy</h4><p>Freshly baked, delivered or picked up — warm and ready to serve.</p></div>
+      <div class="step"><div class="num">1</div><h4>Choose your box</h4><p>Faithful, Mighty, Rasta, Daniels, Fisher — or build your own mix.</p></div>
+      <div class="step"><div class="num">2</div><h4>Pick your flavours</h4><p>Set your mix and quantity. B2C from 20, B2B from 100.</p></div>
+      <div class="step"><div class="num">3</div><h4>Checkout</h4><p>Delivery date, address, pay securely online.</p></div>
+      <div class="step"><div class="num">4</div><h4>Confirmation</h4><p>Instant confirmation email. Your order goes straight to the kitchen.</p></div>
     </div>
 
     <div class="info-bar">
-      <div><div class="ib-label">Minimum order</div><div class="ib-val">25 patties</div></div>
-      <div><div class="ib-label">Order by</div><div class="ib-val">3 days ahead</div></div>
-      <div><div class="ib-label">Delivery / pickup</div><div class="ib-val">Both available</div></div>
-      <div><div class="ib-label">Order via</div><div class="ib-val">DM · WhatsApp · email</div></div>
+      <div><div class="ib-label">Order channel</div><div class="ib-val">Online only</div></div>
+      <div><div class="ib-label">B2C minimum</div><div class="ib-val">Box of 20</div></div>
+      <div><div class="ib-label">B2B minimum</div><div class="ib-val">Box of 100</div></div>
+      <div><div class="ib-label">Confirmation</div><div class="ib-val">Instant email</div></div>
     </div>
   </div>
 </section>
@@ -429,87 +582,173 @@
 <!-- SOCIAL MEDIA -->
 <section class="social-section">
   <div class="wrap">
-    <p class="kicker" style="color:var(--gold)">For your socials</p>
-    <h2 class="sec-title">Social media layouts</h2>
-    <p class="sec-sub">Ready-made templates for Instagram &amp; TikTok to promote Pretty Patty. Same colours, instantly recognisable, scroll-stopping.</p>
+    <p class="kicker" style="color:var(--gold)">Channel strategy</p>
+    <h2 class="sec-title">Social media plan</h2>
+    <p class="sec-sub">TikTok does the fishing. Instagram shows the depth. Everything else stays open for exploration.</p>
+
+    <div class="split-bar">
+      <div class="sb-tiktok">60% TIKTOK — reach &amp; selling</div>
+      <div class="sb-insta">20% INSTA — depth</div>
+      <div class="sb-other">20% OTHER</div>
+    </div>
 
     <div class="grid social-grid">
-      <!-- Instagram feed post -->
-      <div>
-        <div class="mock-label">Instagram — feed post (1:1)</div>
-        <div class="ig-post">
-          <div class="ig-top">
-            <div class="ig-av">PP</div>
-            <div><div class="ig-user">pretty.patty</div><div class="ig-loc">Jamaican Catering</div></div>
-          </div>
-          <div class="ig-img">
-            <svg width="120" height="84" viewBox="0 0 100 70"><path d="M50 5C20 5 5 35 8 55c1 8 12 10 42 10s41-2 42-10C95 35 80 5 50 5z" fill="#FED100" stroke="#101010" stroke-width="3"/><path d="M22 30q28-14 56 0" fill="none" stroke="#C99700" stroke-width="3" stroke-linecap="round"/></svg>
-            <div class="ig-cap-on">PARTY?<br>WE GOT<br>PATTY 🇯🇲</div>
-          </div>
-          <div class="ig-actions">❤️ 💬 ✈️</div>
-          <div class="ig-cap"><b>pretty.patty</b> Fresh Jamaican for your event 🔥 From 25 pieces. DM for the price list! #prettypatty</div>
-        </div>
-      </div>
-
-      <!-- Instagram story -->
-      <div>
-        <div class="mock-label">Instagram / FB — story (9:16)</div>
-        <div class="vertical story-bg">
-          <div class="v-top">PRETTY PATTY · NEW</div>
-          <div class="v-mid">
-            <div class="v-emoji">🥟🔥</div>
-            <div class="big">CATER<br>YOUR<br>PARTY WITH<br>PATTIES</div>
-            <div class="sub">from 25 pieces</div>
-          </div>
-          <div class="v-bottom">⬆️ Swipe up · DM us</div>
-        </div>
-      </div>
-
       <!-- TikTok -->
       <div>
-        <div class="mock-label">TikTok — cover (9:16)</div>
+        <div class="mock-label">TikTok — 60%</div>
+        <div class="mock-role">Promote · fish for clients · strategic selling</div>
         <div class="vertical tiktok-bg">
           <div class="v-top">@pretty.patty</div>
           <div class="v-mid">
-            <div class="big">POV: you<br>booked the<br>tastiest<br>catering</div>
-            <div class="sub">Jamaican patties 🇯🇲</div>
+            <div class="big">POV: your<br>freezer is<br>full of<br>patties</div>
+            <div class="sub">Box of 20 · order online</div>
           </div>
           <div class="v-bottom">Follow for more 🔥</div>
           <div class="tiktok-ui">❤️<br><span>♬</span></div>
         </div>
       </div>
+
+      <!-- Instagram -->
+      <div>
+        <div class="mock-label">Instagram — 20%</div>
+        <div class="mock-role">Character · values · our depth</div>
+        <div class="ig-post">
+          <div class="ig-top">
+            <div class="ig-av">PP</div>
+            <div><div class="ig-user">pretty.patty</div><div class="ig-loc">One kitchen. Real love.</div></div>
+          </div>
+          <div class="ig-img">
+            <svg width="106" height="74" viewBox="0 0 100 70"><path d="M50 5C20 5 5 35 8 55c1 8 12 10 42 10s41-2 42-10C95 35 80 5 50 5z" fill="#FED100" stroke="#101010" stroke-width="3"/><path d="M22 30q28-14 56 0" fill="none" stroke="#C99700" stroke-width="3" stroke-linecap="round"/></svg>
+            <div class="ig-cap-on">WHY WE<br>BAKE 🇯🇲</div>
+          </div>
+          <div class="ig-actions">❤️ 💬 ✈️</div>
+          <div class="ig-cap"><b>pretty.patty</b> Five flavours. One kitchen. Made to bless the people who eat it. #prettypatty</div>
+        </div>
+      </div>
+
+      <!-- Story / other -->
+      <div>
+        <div class="mock-label">Story / Other — 20%</div>
+        <div class="mock-role">Open to explore · YouTube, WhatsApp, newsletter</div>
+        <div class="vertical story-bg">
+          <div class="v-top">PRETTY PATTY · NEW</div>
+          <div class="v-mid">
+            <div class="v-emoji">🥟🔥</div>
+            <div class="big">THE<br>FAITHFUL<br>BOX</div>
+            <div class="sub">All 5 flavours · €90</div>
+          </div>
+          <div class="v-bottom">⬆️ Order online</div>
+        </div>
+      </div>
     </div>
 
-    <!-- caption + content ideas -->
     <div class="caption-ideas">
-      <h3>📋 Content ideas to get started</h3>
+      <h3>📋 Content ideas per channel</h3>
       <ul>
-        <li><b>Behind the scenes:</b> folding the dough &amp; patties fresh out of the oven — satisfying close-ups always perform well.</li>
-        <li><b>Event reel:</b> film a delivery/setup at a party with the caption "Cater your event with Pretty Patty".</li>
-        <li><b>Taste test / ASMR:</b> show the "crunch" of the pastry crust — perfect for TikTok.</li>
-        <li><b>Price list carousel:</b> a swipe post with the tiers and packages (same colours as this list).</li>
-        <li><b>Customer review:</b> a screenshot or quote from a happy host after their event.</li>
+        <li><b>TikTok (60%) — the hook:</b> ASMR crust crunch, dough-folding close-ups, "POV: you found the best patty in the country", box-unboxing, freezer-stock hauls. Fast, punchy, sound-led. Every video ends with the online store.</li>
+        <li><b>TikTok — selling:</b> "5 flavours, ranked", "Which box are you?" (Faithful / Mighty / Rasta / Daniels / Fisher), shop-delivery day-in-the-life.</li>
+        <li><b>Instagram (20%) — the depth:</b> Aisha's story, why the recipe matters, the kitchen, the values, the churches we serve. Carousels and quiet, well-shot photography.</li>
+        <li><b>Instagram — proof:</b> stockist shelves, customer reviews, behind-the-scenes of a 100-box run.</li>
+        <li><b>Other (20%) — explore:</b> WhatsApp broadcast for stockists, a simple newsletter, YouTube Shorts as a TikTok mirror.</li>
       </ul>
-      <div class="hashtags">#prettypatty #jamaicanpatty #catering #streetfood #caribbeanfood #foodcatering #eventcatering #patty</div>
+      <div class="hashtags">#prettypatty #jamaicanpatty #jamaicanfood #caribbeanfood #saltfish #patty #streetfood #madewithlove</div>
     </div>
   </div>
 </section>
 
 <!-- CTA -->
 <section class="cta">
-  <h2>Ready to order? 🇯🇲</h2>
-  <p>Tell us your date and quantity — we'll handle the flavour. From 25 patties.</p>
-  <a href="#">Request your quote</a>
+  <h2>Order your box 🇯🇲</h2>
+  <p>Online only. Four clicks. Freshly baked, boxed and on its way.</p>
+  <a href="#">Order online</a>
 </section>
 
 <footer>
   <div class="logo-sm">Pretty Patty</div>
-  Jamaican Patty Catering · [phone] · [email] · [@pretty.patty]<br>
-  Price list subject to change — ask for current rates.
+  Authentic Jamaican Patties · [website] · [email] · [@pretty.patty]<br>
+  Prices subject to change — see the online store for current rates.
 </footer>
 
+<!-- ================= INTERNAL ================= -->
+<div class="internal-flag">🔒 Internal — strategy notes. Remove this section before sending to customers.</div>
+<section class="internal">
+  <div class="wrap">
+    <h2 class="sec-title" style="font-size:28px">Business model &amp; positioning</h2>
+    <p class="sec-sub" style="font-size:15px">One kitchen. Three distribution channels. No compromise on positioning.</p>
+
+    <div class="grid int-grid">
+      <div class="int-card">
+        <h4>🏪 Distribution — 3 channels</h4>
+        <ul>
+          <li><b>5 shops</b> — consistent monthly &amp; bi-weekly orders (B2B, 100+ boxes)</li>
+          <li><b>5 churches</b> — sold at a low price so they can bless their congregation, not charge them</li>
+          <li><b>1 online store</b> — direct-to-customer, the main brand channel</li>
+          <li>All produced from <b>one kitchen</b></li>
+        </ul>
+      </div>
+
+      <div class="int-card">
+        <h4>💻 Online experience</h4>
+        <ul>
+          <li>Online only — no phone orders</li>
+          <li>Landing page: clear, charismatic, clean</li>
+          <li><b>Max 4–5 clicks</b> from arrival to paid</li>
+          <li>Confirmation email, auto-forwarded to back office</li>
+        </ul>
+      </div>
+
+      <div class="int-card">
+        <h4>📱 Channel split</h4>
+        <ul>
+          <li><b>60% TikTok</b> — promote &amp; fish for clients, strategic selling</li>
+          <li><b>20% Instagram</b> — character, values, depth</li>
+          <li><b>20% Other</b> — open to explore</li>
+        </ul>
+      </div>
+
+      <div class="int-card">
+        <h4>🚫 Boundaries</h4>
+        <ul>
+          <li class="no">No festivals</li>
+          <li class="no">No poor positioning</li>
+          <li class="yes">Alignment and prosperity only</li>
+          <li class="yes">Premium, retail-ready presentation</li>
+        </ul>
+      </div>
+
+      <div class="int-card">
+        <h4>📦 Open decisions</h4>
+        <ul>
+          <li>Name for the <b>beef-only box</b> (working title: Bull Box)</li>
+          <li>Name for the <b>chicken-only box</b> (working title: Yardbird Box)</li>
+          <li>Confirm wholesale rates (currently 20% off retail)</li>
+          <li>Promo-day pricing &amp; minimum</li>
+          <li>Lamb patty · coco bread · soups — launch timing</li>
+        </ul>
+      </div>
+
+      <div class="int-card">
+        <h4>🎯 Positioning</h4>
+        <ul>
+          <li>Authentic Jamaican recipe, made locally</li>
+          <li>Supermarket-quality packaging from day one</li>
+          <li>Faith and values are part of the brand, not a bolt-on</li>
+          <li>Serve the community; don't chase every crowd</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="creed">
+      “To be like salt in the marketplace.”
+      <small>PRETTY PATTY · GUIDING PRINCIPLE</small>
+    </div>
+  </div>
+</section>
+
 <div class="editnote">
-  ✏️ <b>Editable concept:</b> the volume discounts (10% at 50+, 20% at 100+), the package prices and add-ons are suggestions you can easily change. Fill in your contact details, social handle and real photos where you see [brackets].
+  ✏️ <b>Notes for Des &amp; Aisha:</b> All five fillings, both order minimums (B2C 20 / B2B 100), the seven boxes, packaging &amp; storage, the online-only 4-click flow and the 60/20/20 channel split are now in.
+  <br><br>
+  <b>Still to confirm:</b> (1) Wholesale prices — I've set B2B at 20% below retail (€4.00 / €2.00), adjust as needed. (2) Box names — <i>Bull Box</i> and <i>Yardbird Box</i> are placeholders for the beef-only and chicken-only boxes. (3) Promo-day minimum &amp; pricing. (4) Contact details and website URL where you see [brackets].
 </div>
 
 </body>
